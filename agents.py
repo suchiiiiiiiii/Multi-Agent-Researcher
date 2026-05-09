@@ -5,7 +5,9 @@ from langchain_core.output_parsers import StrOutputParser
 from tools import web_search, scrape_url
 from dotenv import load_dotenv
 load_dotenv()
+import os
 
+print("GOOGLE KEY EXISTS:", os.getenv("GOOGLE_API_KEY"))
 llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0)
 
 def build_search_agent():
